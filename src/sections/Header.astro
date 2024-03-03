@@ -1,21 +1,21 @@
 ---
 import Logo from "../components/Logo.astro"
 ---
-<header class="">
-  <a href="/" class="">
+<header class="flex p-4 justify-between items-center sticky w-full mx-auto">
+  <a href="/" class="cursor-pointer transition-all ease-linear ">
     <Logo />
     <h1 class="hidden">Ópticas Sol</h1>
   </a>
 
   <input class="hidden" type="checkbox" name="menu" id="menu">
-  <label for="menu" class="">
+  <label for="menu" class="w-8 h-7 menu-btn flex content-between flex-wrap transition-all ease-out duration-200 cursor-pointer z-50">
     <span></span>
     <span></span>
     <span></span>
   </label>
 
-  <nav>
-    <ul>
+  <nav class="fixed right-[-100vw] bg-blueOS-50/80 px-7 py-9 top-0 w-screen h-screen text-lg ease-linear transition-all duration-200 flex">
+    <ul class="my-7 mx-auto flex flex-col gap-5">
       <li>
         <a href="">Nosotros</a>
       </li>
@@ -30,4 +30,24 @@ import Logo from "../components/Logo.astro"
 </header>
 
 <style>
+  .menu-btn > span {
+    @apply w-full h-[3px] bg-blueOS-500 block rounded-3xl transition-all ease-out duration-200
+  }
+  #menu:checked + .menu-btn span {
+    @apply relative -rotate-45;
+    top: calc(100% / 2.3);
+  }
+  #menu:checked + .menu-btn span:nth-child(2) {
+    @apply top-0 rotate-45
+  }
+  #menu:checked + .menu-btn span:nth-child(3) {
+    @apply invisible;
+    top: calc(100% / -2.3);
+  }
+  #menu:checked ~ nav {
+    @apply right-0;
+  }
+  nav > ul > li {
+    @apply ease-linear transition-all
+  }
 </style>
