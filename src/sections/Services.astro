@@ -1,0 +1,33 @@
+---
+const SERVICES = [
+  {
+    title: "Brigadas",
+    description: "Jornadas de salud visual gratuitas a empresas, colegios y casas en Bogotá",
+  },
+  {
+    title: "Tratamientos",
+    description: "Atención y seguimiento a diferentes padecimientos visuales.",
+  },
+  {
+    title: "Cirugía Refractiva",
+    description: "Convenio con uno de los centro privados pioneros en cirugía laser de Colombia.",
+  },
+  {
+    title: "Venta Personalizada",
+    description: "Nuestro equipo está a tu disposición para ayudarte a elegir los productos que desees y más te convengan.",
+  },
+]
+---
+<section class=" bg-blueOS-50 px-3.5 py-14 mt-72 rounded-3xl text-[22px]">
+    {
+      SERVICES.map(({ title, description }) => (
+        <article>
+          <header class="flex items-center gap-3">
+            <img src={`/public/${title}.svg`} alt={`Íconos de ${title}`} class="">
+            <h4 class="font-medium">{title}</h4>
+          </header>
+          <p>{description}</p>
+        </article>
+      ))
+    }
+</section>
