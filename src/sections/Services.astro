@@ -17,16 +17,19 @@ const SERVICES = [
     description: "Nuestro equipo está a tu disposición para ayudarte a elegir los productos que desees y más te convengan.",
   },
 ]
+
+import SaberMas from "../components/SaberMas.astro"
 ---
-<section class=" bg-blueOS-50 px-3.5 py-14 mt-72 rounded-3xl text-[22px]">
+<section class=" bg-blueOS-50 px-3.5 py-14 mt-72 rounded-3xl text-[22px] flex flex-col gap-10">
     {
       SERVICES.map(({ title, description }) => (
-        <article>
+        <article class="flex flex-col py-3">
           <header class="flex items-center gap-3">
             <img src={`/public/${title}.svg`} alt={`Íconos de ${title}`} class="">
             <h4 class="font-medium">{title}</h4>
           </header>
-          <p>{description}</p>
+          <p class="text-base my-3">{description}</p>
+          <SaberMas />
         </article>
       ))
     }
